@@ -1,9 +1,9 @@
 # Testing via Cypress
 
 - [Testing via Cypress](#testing-via-cypress)
-  - [Refrence of commands used in tests](#refrence-of-commands-used-in-tests)
+  - [The reference of used commands](#the-reference-of-used-commands)
 
-## Refrence of commands used in tests
+## The reference of used commands
 
 - [mount component](https://docs.cypress.io/api/commands/mount)
 - [visit](https://docs.cypress.io/api/commands/visit)
