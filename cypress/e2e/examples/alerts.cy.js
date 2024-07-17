@@ -3,9 +3,9 @@
 context("Actions", () => {
   beforeEach(() => {
     //cy.visit("https://example.cypress.io/commands/actions");
+    cy.visit("https://webdriveruniversity.com");
   });
   it("Handling alerts", () => {
-    cy.visit("https://webdriveruniversity.com");
     cy.get("#popup-alerts")
       .invoke("removeAttr", "target")
       .click({ force: true });
@@ -14,8 +14,7 @@ context("Actions", () => {
       expect(str).to.equal("I am an alert box!");
     });
   });
-  it.only("Handling confirm", () => {
-    cy.visit("https://webdriveruniversity.com");
+  it("Handling confirm", () => {
     cy.get("#popup-alerts")
       .invoke("removeAttr", "target")
       .click({ force: true });
@@ -25,5 +24,21 @@ context("Actions", () => {
       return false;
     });
     cy.get("#confirm-alert-text").contains("You pressed Cancel!");
+  });
+  it.only("Handling confirm via stubs", () => {
+    cy.get("#popup-alerts")
+      .invoke("removeAttr", "target")
+      .click({ force: true });
+    const stub = cy.stub();
+    cy.on("window:confirm", stub);
+
+    cy.get("#button4")
+      .click()
+      .then(() => {
+        expect(stub.getCall(0)).to.be.calledWith("Press a button!");
+      })
+      .then(() => {
+        return true;
+      });
   });
 });
