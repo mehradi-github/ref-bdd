@@ -9,3 +9,4 @@
 - [visit](https://docs.cypress.io/api/commands/visit)
 - [invoke](https://docs.cypress.io/api/commands/invoke)
 - [its](https://docs.cypress.io/api/commands/its)
+- [origin](https://docs.cypress.io/api/commands/origin)
