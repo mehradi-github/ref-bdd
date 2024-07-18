@@ -12,5 +12,8 @@
 - [origin](https://docs.cypress.io/api/commands/origin)
 - [Catalog of Events](https://docs.cypress.io/api/cypress-api/catalog-of-events)
 - [stub](https://docs.cypress.io/api/commands/stub)
+- [check](https://docs.cypress.io/api/commands/check)
+- [scrollIntoView](https://docs.cypress.io/api/commands/scrollintoview)
+- [Custom Commands](https://docs.cypress.io/api/cypress-api/custom-commands)
 
 This is an [example](https://example.cypress.io/) app used to showcase Cypress.io End-to-End (E2E) testing.

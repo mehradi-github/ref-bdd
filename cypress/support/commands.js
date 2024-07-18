@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("selectExample", (text) => {
+  cy.visit("https://example.cypress.io");
+  cy.contains(text).click({ force: true });
+  //   cy.get(`a[href*="${link}"`).as("example");
+  //   cy.wrap("@example").click({ force: true });
+});
