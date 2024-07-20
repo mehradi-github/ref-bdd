@@ -19,7 +19,9 @@ context("Actions", () => {
   });
 
   it("radio", () => {
-    //cy.selectExample("check");
+    cy.get(".action-checkboxes [disabled]").as("radio");
+    cy.get("@radio").check({ force: true });
+    cy.get("@radio").should("be.checked");
   });
 
   it("Select", () => {
