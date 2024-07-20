@@ -25,6 +25,16 @@ context("Actions", () => {
   });
 
   it("Select", () => {
-    // cy.selectExample("check");
+    cy.get(".action-select").as("select");
+    cy.get("@select").select("fr-oranges");
+    cy.get("@select").should("have.value", "fr-oranges");
+
+    cy.get(".action-select-multiple").as("selectMulti");
+    cy.get("@selectMulti").select(["apples", "oranges", "bananas"]);
+    cy.get("@selectMulti")
+      .invoke("val")
+      .should("deep.equal", ["fr-apples", "fr-oranges", "fr-bananas"]);
+
+    cy.get("@selectMulti").invoke("val").should("include", "fr-apples");
   });
 });
