@@ -5,7 +5,7 @@
   "main": "src/Index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --spec 'cypress/e2e/examples/elements.cy.js' -b chrome",
+    "cy:run": "cypress run --spec 'cypress/e2e/examples/actions.cy.js' -b chrome",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
