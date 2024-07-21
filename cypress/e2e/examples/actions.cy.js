@@ -2,7 +2,7 @@
 
 context("Actions", () => {
   beforeEach(() => {
-    cy.visit("https://example.cypress.io/commands/actions");
+    cy.visit("commands/actions");
   });
   it("check", () => {
     //cy.selectExample("check");
@@ -38,8 +38,22 @@ context("Actions", () => {
     cy.get("@selectMulti").invoke("val").should("include", "fr-apples");
   });
 
+  it("Trigger", () => {
+    cy.get(".trigger-input-range").as("range");
+    cy.get("@range").invoke("val", 25);
+    cy.get("@range").trigger("change");
+    cy.get("@range")
+      .get('input[type="range"')
+      .siblings("p")
+      .should("have.text", "25");
+  });
+});
+
+describe("Actions with host", () => {
+  beforeEach(() => {
+    cy.visit(Cypress.env("host"));
+  });
   it("AutoComplete", () => {
-    cy.visit("https://webdriveruniversity.com");
     cy.get("#autocomplete-textfield")
       .invoke("removeAttr", "target")
       .click({ force: true });
@@ -53,15 +67,5 @@ context("Actions", () => {
         cy.url().should("include", expectedText);
       }
     });
-  });
-
-  it.only("Trigger", () => {
-    cy.get(".trigger-input-range").as("range");
-    cy.get("@range").invoke("val", 25);
-    cy.get("@range").trigger("change");
-    cy.get("@range")
-      .get('input[type="range"')
-      .siblings("p")
-      .should("have.text", "25");
   });
 });
