@@ -37,4 +37,21 @@ context("Actions", () => {
 
     cy.get("@selectMulti").invoke("val").should("include", "fr-apples");
   });
+
+  it.only("AutoComplete", () => {
+    cy.visit("https://webdriveruniversity.com");
+    cy.get("#autocomplete-textfield")
+      .invoke("removeAttr", "target")
+      .click({ force: true });
+
+    cy.get("#myInput").type("A");
+    const expectedText = "Avacado";
+    cy.get("#myInputautocomplete-list > *").each(($el, index, $list) => {
+      if ($el.text() === expectedText) {
+        $el.trigger("click");
+        cy.get("#submit-button").click();
+        cy.url().should("include", expectedText);
+      }
+    });
+  });
 });
