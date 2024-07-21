@@ -5,6 +5,7 @@
 
 ## The reference of used commands
 
+- [typescript support](https://docs.cypress.io/guides/tooling/typescript-support)
 - [mount component](https://docs.cypress.io/api/commands/mount)
 - [visit](https://docs.cypress.io/api/commands/visit)
 - [invoke](https://docs.cypress.io/api/commands/invoke)
@@ -16,5 +17,6 @@
 - [scrollIntoView](https://docs.cypress.io/api/commands/scrollintoview)
 - [Custom Commands](https://docs.cypress.io/api/cypress-api/custom-commands)
 - [trigger](https://docs.cypress.io/api/commands/trigger)
+- [env](https://docs.cypress.io/api/cypress-api/env)
 
 This is an [example](https://example.cypress.io/) app used to showcase Cypress.io End-to-End (E2E) testing.
