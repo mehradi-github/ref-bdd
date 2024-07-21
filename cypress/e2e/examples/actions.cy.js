@@ -38,7 +38,7 @@ context("Actions", () => {
     cy.get("@selectMulti").invoke("val").should("include", "fr-apples");
   });
 
-  it.only("AutoComplete", () => {
+  it("AutoComplete", () => {
     cy.visit("https://webdriveruniversity.com");
     cy.get("#autocomplete-textfield")
       .invoke("removeAttr", "target")
@@ -53,5 +53,15 @@ context("Actions", () => {
         cy.url().should("include", expectedText);
       }
     });
+  });
+
+  it.only("Trigger", () => {
+    cy.get(".trigger-input-range").as("range");
+    cy.get("@range").invoke("val", 25);
+    cy.get("@range").trigger("change");
+    cy.get("@range")
+      .get('input[type="range"')
+      .siblings("p")
+      .should("have.text", "25");
   });
 });

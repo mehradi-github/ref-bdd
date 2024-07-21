@@ -15,5 +15,6 @@
 - [check](https://docs.cypress.io/api/commands/check)
 - [scrollIntoView](https://docs.cypress.io/api/commands/scrollintoview)
 - [Custom Commands](https://docs.cypress.io/api/cypress-api/custom-commands)
+- [trigger](https://docs.cypress.io/api/commands/trigger)
 
 This is an [example](https://example.cypress.io/) app used to showcase Cypress.io End-to-End (E2E) testing.
