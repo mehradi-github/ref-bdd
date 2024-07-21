@@ -9,10 +9,10 @@ context("Actions", () => {
     // cy.get('a[href*="commands/actions"]')
     //   .invoke("removeAttr", "target")
     //   .click({ force: true });
-    cy.get('.action-multiple-checkboxes [type="checkbox"]').check(
+    cy.get('.action-multiple-checkboxes [type="checkbox"]').check([
       "checkbox1",
-      "checkbox2"
-    );
+      "checkbox2",
+    ]);
     cy.get('.action-multiple-checkboxes [type="checkbox"]').should(
       "be.checked"
     );
