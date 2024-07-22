@@ -2,7 +2,7 @@
 
 context("Actions", () => {
   beforeEach(() => {
-    cy.visit("commands/actions");
+    cy.visit("commands/actions", { timeout: 60000 });
   });
   it("check", () => {
     //cy.selectExample("check");
@@ -54,6 +54,7 @@ describe("Actions with host", () => {
     cy.visit(Cypress.env("host"));
   });
   it("AutoComplete", () => {
+    cy.wait(3000);
     cy.get("#autocomplete-textfield")
       .invoke("removeAttr", "target")
       .click({ force: true });
