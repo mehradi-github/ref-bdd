@@ -1,6 +1,10 @@
 /// <reference types="cypress"/>
 
 context("Actions", () => {
+  before(() => {
+    //cy.viewport(550, 750)
+    cy.viewport("iphone-6");
+  });
   beforeEach(() => {
     cy.visit("commands/actions", { timeout: 60000 });
   });

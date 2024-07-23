@@ -14,6 +14,8 @@ export default defineConfig({
     trashAssetsBeforeRuns: true,
     video: true,
     videoCompression: 15,
+    viewportHeight: 2080,
+    viewportWidth: 2920,
     env: {
       host: "https://webdriveruniversity.com",
     },
