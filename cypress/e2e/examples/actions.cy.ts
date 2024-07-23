@@ -71,7 +71,7 @@ describe("Actions with host", () => {
         cy.get("#submit-button").click();
         cy.url().should("include", expectedText);
       }
-      debugger;
+      // debugger;
     });
     cy.screenshot("Screenshot from autoComplete");
   });
