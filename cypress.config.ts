@@ -12,6 +12,8 @@ export default defineConfig({
     pageLoadTimeout: 120000,
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
+    video: true,
+    videoCompression: 15,
     env: {
       host: "https://webdriveruniversity.com",
     },
