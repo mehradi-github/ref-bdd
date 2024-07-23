@@ -1,6 +1,10 @@
 /// <reference types="cypress"/>
 
 context("Actions", () => {
+  before(() => {
+    //cy.viewport(550, 750)
+    cy.viewport("iphone-6");
+  });
   beforeEach(() => {
     cy.visit("commands/actions", { timeout: 60000 });
   });
@@ -67,7 +71,7 @@ describe("Actions with host", () => {
         cy.get("#submit-button").click();
         cy.url().should("include", expectedText);
       }
-      debugger;
+      // debugger;
     });
     cy.screenshot("Screenshot from autoComplete");
   });
