@@ -6,6 +6,8 @@ context("Actions", () => {
     cy.viewport("iphone-6");
   });
   beforeEach(() => {
+    cy.clearLocalStorage();
+    cy.clearCookies();
     cy.visit("commands/actions", { timeout: 60000 });
   });
   it("check", () => {
