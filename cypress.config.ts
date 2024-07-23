@@ -10,6 +10,8 @@ export default defineConfig({
     baseUrl: "https://example.cypress.io",
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 120000,
+    screenshotOnRunFailure: true,
+    trashAssetsBeforeRuns: true,
     env: {
       host: "https://webdriveruniversity.com",
     },
