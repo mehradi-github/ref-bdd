@@ -18,5 +18,7 @@
 - [Custom Commands](https://docs.cypress.io/api/cypress-api/custom-commands)
 - [trigger](https://docs.cypress.io/api/commands/trigger)
 - [env](https://docs.cypress.io/api/cypress-api/env)
+- [Debugging](https://docs.cypress.io/guides/guides/debugging)
+- [Screenshots and Videos](https://docs.cypress.io/guides/guides/screenshots-and-videos)
 
 This is an [example](https://example.cypress.io/) app used to showcase Cypress.io End-to-End (E2E) testing.
