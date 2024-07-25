@@ -1,0 +1,23 @@
+{
+  "name": "ref-testing",
+  "version": "1.0.0",
+  "description": "- [Testing via Cypress](#testing-via-cypress)   - [Refrence of commands used in tests](#refrence-of-commands-used-in-tests)",
+  "main": "src/Index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --spec 'cypress/e2e/examples/' -b chrome",
+    "report:merge": "npx mochawesome-merge cypress/results/*.json > mochawesome.json && npx marge mochawesome.json",
+    "report:delete-results": "rm -rf cypress/results/* || true",
+    "report:delete-mochawesome": "rm -rf mochawesome-report/* || true",
+    "cy:report": "npm run report:delete-results && npm run report:delete-mochawesome && npm run cy:run && npm run report:merge",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.13.0",
+    "cypress-multi-reporters": "^1.6.4",
+    "mocha-junit-reporter": "^2.2.1",
+    "typescript": "^5.5.3"
+  }
+}
