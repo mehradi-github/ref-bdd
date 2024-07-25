@@ -19,5 +19,9 @@ export default defineConfig({
     env: {
       host: "https://webdriveruniversity.com",
     },
+    reporter: "cypress-multi-reporters",
+    reporterOptions: {
+      configFile: "reporter-config.json",
+    },
   },
 });
