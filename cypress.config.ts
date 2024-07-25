@@ -19,9 +19,12 @@ export default defineConfig({
     env: {
       host: "https://webdriveruniversity.com",
     },
-    reporter: "cypress-multi-reporters",
+    reporter: "mochawesome",
     reporterOptions: {
-      configFile: "reporter-config.json",
+      reportDir: "cypress/results",
+      overwrite: true,
+      html: true,
+      json: true,
     },
   },
 });
