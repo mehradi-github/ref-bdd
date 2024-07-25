@@ -5,7 +5,8 @@
   "main": "src/Index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --spec 'cypress/e2e/examples/actions.cy.ts' -b chrome",
+    "cy:run": "cypress run --spec 'cypress/e2e/examples/' -b chrome",
+    "merge": "npx junit-merge -d cypress/results/ -o cypress/results/results.xml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
