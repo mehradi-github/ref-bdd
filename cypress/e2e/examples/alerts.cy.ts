@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context("Actions", () => {
+context("Alerts", () => {
   beforeEach(() => {
     //cy.visit("https://example.cypress.io/commands/actions");
     cy.visit("https://webdriveruniversity.com");
@@ -25,7 +25,7 @@ context("Actions", () => {
     });
     cy.get("#confirm-alert-text").contains("You pressed Cancel!");
   });
-  it.only("Handling confirm via stubs", () => {
+  it("Handling confirm via stubs", () => {
     cy.get("#popup-alerts")
       .invoke("removeAttr", "target")
       .click({ force: true });

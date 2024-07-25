@@ -23,5 +23,6 @@
 - [viewport](https://docs.cypress.io/api/commands/viewport)
 - [clearCookie](https://docs.cypress.io/api/commands/clearcookie)
 - [clearLocalStorage](https://docs.cypress.io/api/commands/clearlocalstorage)
+- [Reporters](https://docs.cypress.io/guides/tooling/reporters)
 
 This is an [example](https://example.cypress.io/) app used to showcase Cypress.io End-to-End (E2E) testing.
