@@ -19,6 +19,10 @@ export default defineConfig({
     env: {
       host: "https://webdriveruniversity.com",
     },
+    retries: {
+      runMode: 1,
+      openMode: 1,
+    },
     reporter: "mochawesome",
     reporterOptions: {
       reportDir: "cypress/results",
