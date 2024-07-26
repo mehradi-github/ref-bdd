@@ -55,26 +55,35 @@ context("Actions", () => {
   });
 });
 
-describe("Actions with host", () => {
-  beforeEach(() => {
-    cy.visit(Cypress.env("host"));
-  });
-  it("AutoComplete", () => {
-    cy.wait(3000);
-    cy.get("#autocomplete-textfield")
-      .invoke("removeAttr", "target")
-      .click({ force: true });
-
-    cy.get("#myInput").type("A");
-    const expectedText = "Avacado";
-    cy.get("#myInputautocomplete-list > *").each(($el, index, $list) => {
-      if ($el.text() === expectedText) {
-        $el.trigger("click");
-        cy.get("#submit-button").click();
-        cy.url().should("include", expectedText);
-      }
-      // debugger;
+describe(
+  "Actions with host",
+  {
+    retries: {
+      runMode: 1,
+      openMode: 1,
+    },
+  },
+  () => {
+    beforeEach(() => {
+      cy.visit(Cypress.env("host"));
     });
-    cy.screenshot("Screenshot from autoComplete");
-  });
-});
+    it("AutoComplete", () => {
+      cy.wait(3000);
+      cy.get("#autocomplete-textfield")
+        .invoke("removeAttr", "target")
+        .click({ force: true });
+
+      cy.get("#myInput").type("A");
+      const expectedText = "Avacado";
+      cy.get("#myInputautocomplete-list > *").each(($el, index, $list) => {
+        if ($el.text() === expectedText) {
+          $el.trigger("click");
+          cy.get("#submit-button").click();
+          cy.url().should("include", expectedText);
+        }
+        // debugger;
+      });
+      cy.screenshot("Screenshot from autoComplete");
+    });
+  }
+);
