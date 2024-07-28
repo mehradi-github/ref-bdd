@@ -5,13 +5,7 @@
   "main": "src/Index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --spec 'cypress/e2e/examples/' -b chrome",
-    "report:merge": "npx mochawesome-merge cypress/results/*.json > mochawesome.json && npx marge mochawesome.json",
-    "report:delete-results": "rm -rf cypress/results/* || true",
-    "report:delete-dir-mochawesome": "rm -rf mochawesome-report/* || true",
-    "report:delete-mochawesome": "rm -f mochawesome.json || true",
-    "cy:report": "npm run report:delete-results && npm run report:delete-dir-mochawesome && npm run report:delete-mochawesome && npm run cy:run && npm run report:merge",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run --spec 'cypress/e2e/examples/' -b chrome"
   },
   "author": "",
   "license": "ISC",
