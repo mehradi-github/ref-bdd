@@ -4,6 +4,7 @@ export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      require("cypress-mochawesome-reporter/plugin")(on);
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
     chromeWebSecurity: false,
@@ -23,12 +24,13 @@ export default defineConfig({
       runMode: 1,
       openMode: 1,
     },
-    reporter: "mochawesome",
+    reporter: "cypress-mochawesome-reporter",
     reporterOptions: {
-      reportDir: "cypress/results",
-      overwrite: false,
-      html: false,
-      json: true,
+      charts: true,
+      reportPageTitle: "custom-title",
+      embeddedScreenshots: true,
+      inlineAssets: true,
+      saveAllAttempts: false,
     },
   },
 });
