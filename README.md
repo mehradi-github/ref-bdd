@@ -28,5 +28,6 @@
 - [plugins](https://docs.cypress.io/plugins)
 - [request](https://docs.cypress.io/api/commands/request)
 - [intercept](https://docs.cypress.io/api/commands/intercept)
+- [fixture](https://docs.cypress.io/api/commands/fixture)
 
 This is an [example](https://example.cypress.io/) app used to showcase Cypress.io End-to-End (E2E) testing.

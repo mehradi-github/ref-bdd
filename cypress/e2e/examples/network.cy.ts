@@ -1,10 +1,25 @@
 /// <reference types="cypress"/>
 
 describe("Network", () => {
-  beforeEach(() => {
-    cy.visit("/commands/network-requests");
+  beforeEach(() => {});
+  it("use a fixture file's content", () => {
+    cy.visit("/commands/files");
+
+    cy.intercept(
+      {
+        method: "GET",
+        url: "**/comments/*",
+      },
+      { fixture: "user.json" }
+    ).as("getComment");
+    cy.get(".fixture-btn").click({ force: true });
+    cy.wait("@getComment")
+      .its("response.body")
+      .should("have.property", "name")
+      .and("include", "Jane");
   });
   it("Stub a response to PUT comments", () => {
+    cy.visit("/commands/network-requests");
     const message = "whoa, this comment does not exist";
     cy.intercept(
       {
