@@ -5,14 +5,17 @@
   "main": "src/Index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "test": "cypress run --spec 'cypress/e2e/examples/' -b chrome"
+    "test": "cypress run --spec 'cypress/e2e/examples/features' -b chrome"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.2",
     "cypress": "^13.13.0",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-multi-reporters": "^1.6.4",
+    "cypress-on-fix": "^1.0.3",
     "mocha-junit-reporter": "^2.2.1",
     "typescript": "^5.5.3"
   }
