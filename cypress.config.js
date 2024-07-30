@@ -1,10 +1,30 @@
-import { defineConfig } from "cypress";
+const { defineConfig } = require("cypress");
+const cypressOnFix = require("cypress-on-fix");
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const {
+  addCucumberPreprocessorPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor");
+const {
+  createEsbuildPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
-export default defineConfig({
+module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    async setupNodeEvents(on, config) {
       // implement node event listeners here
+      on = cypressOnFix(on);
+
       require("cypress-mochawesome-reporter/plugin")(on);
+
+      await addCucumberPreprocessorPlugin(on, config);
+      on(
+        "file:preprocessor",
+        createBundler({
+          plugins: [createEsbuildPlugin(config)],
+        })
+      );
+
+      return config;
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
     chromeWebSecurity: false,

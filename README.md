@@ -1,13 +1,21 @@
 # Testing via Cypress
 
 - [Testing via Cypress](#testing-via-cypress)
-  - [The reference of used commands](#the-reference-of-used-commands)
+  - [Cypress](#cypress)
+    - [The reference of used commands](#the-reference-of-used-commands)
+  - [Cucumber](#cucumber)
+    - [Installing extention for Cucumber](#installing-extention-for-cucumber)
 
-## The reference of used commands
+## Cypress
+
+[Cypress](https://github.com/mehradi-github/ref-cypress#e2e-testing-with-cypress) is a next generation front end testing tool built for the modern web. We address the key pain points developers and QA engineers face when testing modern applications.
+
+### The reference of used commands
 
 - [typescript support](https://docs.cypress.io/guides/tooling/typescript-support)
 - [mount component](https://docs.cypress.io/api/commands/mount)
 - [visit](https://docs.cypress.io/api/commands/visit)
+- [get](https://docs.cypress.io/api/commands/get)
 - [invoke](https://docs.cypress.io/api/commands/invoke)
 - [its](https://docs.cypress.io/api/commands/its)
 - [origin](https://docs.cypress.io/api/commands/origin)
@@ -32,3 +40,9 @@
 - [its](https://docs.cypress.io/api/commands/its)
 
 This is an [example](https://example.cypress.io/) app used to showcase Cypress.io End-to-End (E2E) testing.
+
+## Cucumber
+
+[Cucumber](https://cucumber.io/docs/guides/overview/) is a tool that supports Behaviour-Driven Development([BDD](https://cucumber.io/docs/bdd/)).
+
+### [Installing extention for Cucumber](https://github.com/mehradi-github/ref-cypress#installing-extention-for-cucumber)
