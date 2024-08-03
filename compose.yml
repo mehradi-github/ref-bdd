@@ -1,0 +1,11 @@
+services:
+  test:
+    container_name: ref-testing
+    build: .
+    volumes:
+      - ref-testing-vol:/app/cypress/reports
+      - ref-testing-vol:/app/cypress/screenshots
+      - ref-testing-vol:/app/cypress/videos
+
+volumes:
+  ref-testing-vol:
