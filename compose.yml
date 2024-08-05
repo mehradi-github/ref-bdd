@@ -1,7 +1,14 @@
 services:
   test:
     container_name: ref-testing
-    build: .
+    network_mode: "host"
+    environment:
+      - http_proxy=http://127.0.0.1:2334
+      - https_proxy=http://127.0.0.1:2334
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
     volumes:
       - ref-testing-vol:/app/cypress/reports
       - ref-testing-vol:/app/cypress/screenshots
