@@ -1,18 +1,16 @@
 services:
   test:
-    container_name: ref-testing
-    network_mode: "host"
+    container_name: ref-bdd
     environment:
-      - http_proxy=http://127.0.0.1:2334
-      - https_proxy=http://127.0.0.1:2334
+      - http_proxy=http://192.168.1.10:2080
+      - https_proxy=http://192.168.1.10:2080
     build:
       context: .
       dockerfile: Dockerfile
       target: base
+      args:
+        - http_proxy=http://192.168.1.10:2080
+    image: bdd-img:latest
     volumes:
-      - ref-testing-vol:/app/cypress/reports
-      - ref-testing-vol:/app/cypress/screenshots
-      - ref-testing-vol:/app/cypress/videos
-
-volumes:
-  ref-testing-vol:
+      - ./vols/reports:/app/cypress/reports
+      - ./vols/screenshots:/app/cypress/screenshots
