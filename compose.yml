@@ -10,7 +10,8 @@ services:
       target: base
       args:
         - http_proxy=http://192.168.1.10:2080
-    image: bdd-img:latest
+      tags:
+        - bdd-img:latest
     volumes:
       - ./vols/reports:/app/cypress/reports
       - ./vols/screenshots:/app/cypress/screenshots
