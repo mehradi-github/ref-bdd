@@ -1,13 +1,11 @@
 pipeline{
-    agent any
-    tools { nodejs "node"}
+    agent any   
     stages{
-        stage("Cypress test suite"){
+        stage("docker compose"){
             steps{
-                echo "========executing cypress========"
-                git branch:'main', url:'https://github.com/mehradi-github/ref-testing.git'
-                sh 'npm i'
-                sh 'npm run test'
+                echo "========executing compose========"
+                git branch:'main', url:'https://github.com/mehradi-github/ref-bdd.git'
+                sh 'docker compose up'
             }
             
         }
